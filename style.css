@@ -1,278 +1,32 @@
-/* Reset e Estilos Globais */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+/* Novos estilos para SPA */
+.section {
+  display: none;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease;
 }
 
-body {
-  background-color: #f9f3f0; /* Tom suave para tema de bebês */
-  color: #333;
-  line-height: 1.6;
+.section.active-section {
+  display: block;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo {
-  height: 60px;
-  width: auto;
-}
-
-.navbar {
-  display: flex;
-  gap: 2rem;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #5d4037; /* Cor terrosa */
+.nav-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #5d4037;
   font-weight: 600;
-  transition: color 0.3s;
 }
 
-.navbar a:hover {
-  color: #d81b60; /* Rosa destacado */
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('images/hero-bg.jpg');
-  background-size: cover;
-  margin-bottom: 2rem;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #5d4037;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #777;
-}
-
-.button {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  background-color: #d81b60;
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #ad1457;
-}
-
-/* Produtos */
-.featured {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.featured h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #5d4037;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.product-card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.product-card h3, .product-card p {
-  padding: 0.5rem 1rem;
-  text-align: center;
-}
-
-.product-card .price {
-  font-weight: bold;
+.nav-btn.active {
   color: #d81b60;
-  font-size: 1.2rem;
+  border-bottom: 2px solid #d81b60;
 }
 
-/* Rodapé */
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  background-color: #5d4037;
-  color: white;
-  margin-top: 2rem;
-}
-
-/* Página de Produtos */
-.page-title {
-  text-align: center;
-  margin: 2rem 0;
-  color: #5d4037;
-  font-size: 2.2rem;
-}
-
-/* Filtros (opcional) */
-.filters {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.filter-button {
-  padding: 0.5rem 1rem;
-  background-color: #fff;
-  border: 1px solid #d81b60;
-  color: #d81b60;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.filter-button:hover, .filter-button.active {
-  background-color: #d81b60;
-  color: white;
-}
-
-/* Efeito para cards de produtos */
-.product-card button {
-  width: 100%;
-  padding: 0.5rem;
-  background-color: #5d4037;
-  color: white;
-  border: none;
-  border-radius: 0 0 10px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.product-card button:hover {
-  background-color: #d81b60;
-}
-
-/* Estilos do Carrinho */
-#cart-items {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-}
-
-.cart-item {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-}
-
-.cart-item img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.cart-item-details {
-  flex-grow: 1;
-}
-
-.cart-item h3 {
-  color: #5d4037;
-  margin-bottom: 0.5rem;
-}
-
-.cart-item .price {
-  font-weight: bold;
-  color: #d81b60;
-}
-
-.cart-item-quantity {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.cart-item-quantity button {
-  background: #f0f0f0;
-  border: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.cart-item-quantity button:hover {
-  background: #d81b60;
-  color: white;
-}
-
-.cart-total {
-  text-align: right;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.cart-total span {
-  color: #d81b60;
-}
-
-#checkout-btn {
-  margin-top: 1rem;
-  padding: 0.8rem 2rem;
-  background-color: #5d4037;
-}
-
-#checkout-btn:hover {
-  background-color: #3e2723;
-}
-
-.empty-cart {
-  text-align: center;
-  padding: 2rem;
-  color: #777;
-}
+/* Mantenha todos os outros estilos anteriores */
