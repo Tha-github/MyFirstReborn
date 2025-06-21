@@ -1,3 +1,17 @@
+/* Estilos para o logo */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  max-height: 80px; /* Ajuste conforme necessário */
+  width: auto;
+  margin-bottom: 0.5rem;
+}
+
 :root {
   --primary: #b70015;
   --secondary: #ffb3d0;
@@ -26,6 +40,23 @@ body {
 
 .header h1 {
   margin-bottom: 0.5rem;
+}
+
+/* Ajuste no header para o logo */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0 1.5rem;
+}
+
+/* Ajuste no navbar para melhor espaçamento */
+.navbar {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .navbar {
